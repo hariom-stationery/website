@@ -1,6 +1,48 @@
-.nav-head{
-    color: #fe7865;
+.nav-head {
+  color: #fe7865;
 }
-body{
-    background: #fffaf6;
+body {
+  background: #fffaf6;
+}
+
+#view-catelog {
+  display: flex;
+  background: #fe7865;
+  border: none;
+  border-radius: 0px;
+  margin: 0px auto;
+  padding: 20px 80px;
+  margin-bottom: 40px;
+  color: white;
+}
+#view-catelog:hover {
+  background: white;
+  border: 1px solid #fe7865;
+  color: #fe7865;
+}
+
+#sign-in {
+  padding: 10px;
+  display: flex;
+  margin: 40% auto;
+  color: red;
+  border: 1px solid red;
+  background: transparent;
+  font-weight: 500;
+  border-radius: 10px;
+}
+#sign-in:hover {
+  color: white;
+  background: rgb(252, 63, 49);
+}
+.modal-dialog {
+  height: 90%; /* = 90% of the .modal-backdrop block = %90 of the screen */
+  width: 90%;
+}
+.modal-content {
+  height: 100%; /* = 100% of the .modal-dialog block */
+  width: 100%;
+}
+#message {
+  height: 100% !important;
 }
