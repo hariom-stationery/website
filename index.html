@@ -779,15 +779,15 @@
             function attachSignin(element) {
               var signIn = document.getElementById('sign-in');
               var signOut = document.getElementById('sign-out');
-              var authorizedUser = ['anish.singh.rebase@gmail.com'];
+              var authorizedUser = ['anish.singh.rebase@gmail.com', 'sagargudka@gmail.com', 'hariomstationery13@gmail.com'];
               auth2.attachClickHandler(element, {},
                   function(googleUser) {
                     const username = googleUser.getBasicProfile().getEmail();
-                    
+        
                     if (username.length > 0 && authorizedUser.includes(username)) {
                         // TODO: replace this with 
                         signIn.style.display = 'none';
-                        PDFObject.embed("./assets/catelog.pdf", "#message");
+                        PDFObject.embed("./assets/catlog.pdf", "#message");
                     }else {
                         signIn.style.display = 'none';
                         document.getElementById('message').innerHTML = 'You are not authorised user to see. If you want to view this section please contact the owner.';
