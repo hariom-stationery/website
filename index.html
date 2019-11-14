@@ -708,26 +708,26 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="single-form form-group">
-                                            <input type="text" name="name" placeholder="Enter Your Name" data-error="Name is required." required="required">
+                                            <input id="name" type="text" name="name" placeholder="Enter Your Name" data-error="Name is required." required="required">
                                             <div class="help-block with-errors"></div>
                                         </div> <!-- single form -->
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="single-form form-group">
-                                            <input type="email" name="email" placeholder="Enter Your Email"  data-error="Valid email is required." required="required">
+                                            <input id="email" type="email" name="email" placeholder="Enter Your Email"  data-error="Valid email is required." required="required">
                                             <div class="help-block with-errors"></div>
                                         </div> <!-- single form -->
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="single-form form-group">
-                                            <textarea name="message" placeholder="Enter Your Message" data-error="Please,leave us a message." required="required"></textarea>
+                                            <textarea id="message" name="message" placeholder="Enter Your Message" data-error="Please,leave us a message." required="required"></textarea>
                                             <div class="help-block with-errors"></div>
                                         </div> <!-- single form -->
                                     </div>
                                     <p class="form-message"></p>
                                     <div class="col-lg-12">
                                         <div class="single-form form-group">
-                                            <button class="main-btn" type="submit">CONTACT NOW</button>
+                                            <button onClick="sendMail()" class="main-btn" type="button">CONTACT NOW</button>
                                         </div> <!-- single form -->
                                     </div>
                                 </div> <!-- row -->
@@ -798,6 +798,20 @@
             }
             </script>
         <script>startApp();</script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script>
+            $('#contactFrom').submit(function(e) {
+                e.preventDefault();
+            });
+            async function sendMail() {
+                let data = {
+                    name: $('#name').val(),
+                    email: $('#email').val(),
+                    message: $('textarea#message').val()
+                }
+                axios.post('https://i2ld0ik7p6.execute-api.us-east-1.amazonaws.com/dev/contact', data);
+            }
+        </script>
 
     
     <!--====== jquery js ======-->
